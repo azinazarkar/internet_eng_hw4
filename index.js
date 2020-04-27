@@ -17,6 +17,7 @@ app.get("/", function(req, res){
                              clickHandler: ()=>{console.log("inja")}, 
                              deleteProduct : deleteProduct})
     }).catch((error) =>  {return "ERROR";} );
+    return "1";
 });
 
 app.listen(port, () => {
