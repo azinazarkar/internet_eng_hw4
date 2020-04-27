@@ -6,16 +6,12 @@ app.use(express.static(__dirname ));
 var fs = require('fs');
 const axios = require("axios");
 
-var deleteProduct = function(element){
-    console.log(element);
-}
+
 app.get("/", function(req, res){
     var locations ; 
     axios.get('http://covid19api.xapix.io/v2/locations').then((response) => {
         locations = response.data.locations;
-        res.render('index', {locations: locations ,
-                             clickHandler: ()=>{console.log("inja")}, 
-                             deleteProduct : deleteProduct})
+        res.render('index', {locations: locations });
     }).catch((error) =>  {return "ERROR";} );
     return "1";
 });
